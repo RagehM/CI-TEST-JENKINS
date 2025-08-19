@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
   <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>com.tibco.bw</groupId>
     <artifactId>CI_Test.application.parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <relativePath>../CI_Test.application.parent</relativePath>
   </parent>
+
   <artifactId>CI_Test.application</artifactId>
   <packaging>bwear</packaging>
+
+  <!-- Default properties (used if no profile is selected) -->
   <properties>
     <backup>false</backup>
     <externalProfile>false</externalProfile>
@@ -33,7 +39,6 @@
     <project.type>AppSpace</project.type>
     <domainDesc></domainDesc>
     <keystorePassword></keystorePassword>
-    <bw.Home>\bw\6.8</bw.Home>
     <httpPort>8050</httpPort>
     <profile>default.substvar</profile>
     <restartAppNode>false</restartAppNode>
@@ -43,8 +48,12 @@
     <keystorePath></keystorePath>
     <domain>CI_Test-Domain</domain>
     <agentPort>8079</agentPort>
+
+    <!-- Default Tibco paths (LOCAL) -->
     <tibco.Home>C:\tibco\bw6</tibco.Home>
+    <bw.Home>\bw\6.8</bw.Home>
   </properties>
+
   <build>
     <plugins>
       <plugin>
@@ -53,6 +62,8 @@
         <version>2.9.2</version>
         <extensions>true</extensions>
         <configuration>
+          <tibcoHome>${tibco.Home}</tibcoHome>
+          <bwHome>${bw.Home}</bwHome>
           <deployToAdmin>${deployToAdmin}</deployToAdmin>
           <agentHost>${agentHost}</agentHost>
           <agentPort>${agentPort}</agentPort>
@@ -87,6 +98,7 @@
       </plugin>
     </plugins>
   </build>
+
   <reporting>
     <plugins>
       <plugin>
@@ -96,14 +108,27 @@
       </plugin>
     </plugins>
   </reporting>
+
+  <!-- Profiles for different environments -->
   <profiles>
+    <!-- Local profile -->
     <profile>
-      <id>DEFAULT</id>
+      <id>LOCAL</id>
       <activation>
         <activeByDefault>true</activeByDefault>
       </activation>
       <properties>
-        <profile>default.substvar</profile>
+        <tibco.Home>C:\tibco\bw6</tibco.Home>
+        <bw.Home>\bw\6.8</bw.Home>
+      </properties>
+    </profile>
+
+    <!-- Server profile -->
+    <profile>
+      <id>SERVER</id>
+      <properties>
+        <tibco.Home>E:\Tibco\bw\6.6</tibco.Home>
+        <bw.Home>\bw\6.6</bw.Home>
       </properties>
     </profile>
   </profiles>
