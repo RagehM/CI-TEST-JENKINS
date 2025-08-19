@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<completeReportDTO>
+    <moduleResult xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="testSuiteResultDTO">
+        <moduleInfo>
+            <appName>CI_Test.application</appName>
+            <appVersion>1.0</appVersion>
+            <moduleName>CI_Test</moduleName>
+            <moduleVersion>1.0.0.qualifier</moduleVersion>
+        </moduleInfo>
+        <testSetResult xsi:type="testSetResultDTO">
+            <packageName>ci_test</packageName>
+            <processName>ci_test.SubProcess</processName>
+            <testCaseResult xsi:type="testCaseResultDTO">
+                <assertionFailure>1</assertionFailure>
+                <assertionResult xsi:type="assertionResultDTO">
+                    <activityName>End</activityName>
+                    <activityOutput>&lt;tns:result&gt;15&lt;/tns:result&gt;</activityOutput>
+                    <assertionMode>Primitive</assertionMode>
+                    <assertionStatus>failed</assertionStatus>
+                    <endElementNameTag>&lt;/tns:result&gt;</endElementNameTag>
+                    <goldInput>&lt;tns:result&gt;15&lt;/tns:result&gt;</goldInput>
+                    <instanceId>bw0a100</instanceId>
+                    <message>BX-200006: Assertion error @End</message>
+                    <startElementNameTag>&lt;tns:result&gt;</startElementNameTag>
+                </assertionResult>
+                <assertions>1</assertions>
+                <assertionsRun>0</assertionsRun>
+                <processFailures>0</processFailures>
+                <testCaseFile>/CI_Test/Tests/CI_Test1.bwt</testCaseFile>
+            </testCaseResult>
+        </testSetResult>
+        <showFailureDetails>false</showFailureDetails>
+    </moduleResult>
+</completeReportDTO>

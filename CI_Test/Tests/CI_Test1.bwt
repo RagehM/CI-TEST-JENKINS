@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<emulation:EmulationData xmlns:emulation="http:///emulation.ecore" isBW="true" location="/CI_Test/Tests/CI_Test1.bwt">
+  <ProcessNode Id="ci_test.SubProcess" Name="ci_test.SubProcess" ModelType="BW" moduleName="CI_Test">
+    <Assertion Id="ae61fdb4-d8a4-450e-a86a-a658d0ce8e2e" Name="End" hasDecoration="true">
+      <Lang>urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0</Lang>
+      <Expression>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.example.com/namespaces/tns/1755588467568&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;End-input&quot;/>&lt;xsl:template match=&quot;/&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;xsd:int($End-input/tns:result)=15&quot;>&lt;result status=&quot;passed&quot; message=&quot;Assertion passed.&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;result status=&quot;failed&quot; message=&quot;Assertion failed.&quot;/>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;xsl:choose>&lt;xsl:when test=&quot;xsd:int($End-input/tns:result)=10&quot;>&lt;result status=&quot;passed&quot; message=&quot;Assertion passed.&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;result status=&quot;failed&quot; message=&quot;Assertion failed.&quot;/>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:template>&lt;/xsl:stylesheet></Expression>
+      <OriginalExpression>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.example.com/namespaces/tns/1755588467568&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;End-input&quot;/>&lt;xsl:template name=&quot;End&quot; match=&quot;/&quot;>&lt;Primitive-Assertion>&lt;AssertType>&lt;int>&lt;testInput>&lt;xsl:value-of select=&quot;xsd:int($End-input/tns:result)&quot;/>&lt;/testInput>&lt;goldInput>&lt;xsl:value-of select=&quot;15&quot;/>&lt;/goldInput>&lt;/int>&lt;/AssertType>&lt;AssertType>&lt;int>&lt;testInput>&lt;xsl:value-of select=&quot;xsd:int($End-input/tns:result)&quot;/>&lt;/testInput>&lt;goldInput>&lt;xsl:value-of select=&quot;10&quot;/>&lt;/goldInput>&lt;/int>&lt;/AssertType>&lt;/Primitive-Assertion>&lt;/xsl:template>&lt;/xsl:stylesheet></OriginalExpression>
+    </Assertion>
+    <Operation Name="callProcess" serviceName="ci_test.SubProcess">
+      <Inputs Id="3c3a7df5-0ea6-4a9e-8b7a-fcd8f74d5e63CI_Test_ci_test.SubProcess_callProcess_Start" Name="Start" isDefault="true" type="CALLPROCESS" inputFile="">
+        <informations Name="input" nameSpace="http://www.example.com/namespaces/tns/1755584735848">
+          <nameSpaces prefix="tns" nameSapce="http://www.example.com/namespaces/tns/1755584735848"/>
+          <Parameter Name="tns:Element">
+            <parameters Name="tns:no1" Value="5" type="integer" nameSpace="http://www.example.com/namespaces/tns/1755584735848"/>
+            <parameters Name="tns:no2" Value="10" type="integer" nameSpace="http://www.example.com/namespaces/tns/1755584735848"/>
+          </Parameter>
+        </informations>
+      </Inputs>
+      <resolvedInput inputValue="&lt;tns:Element xmlns:tns='http://www.example.com/namespaces/tns/1755584735848' >&lt;tns:no1>5&lt;/tns:no1>&lt;tns:no2>10&lt;/tns:no2>&lt;/tns:Element>"/>
+    </Operation>
+  </ProcessNode>
+</emulation:EmulationData>
