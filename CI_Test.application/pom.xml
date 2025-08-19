@@ -51,82 +51,36 @@
   </properties>
 
   <build>
-    <plugins>
-      <plugin>
-        <groupId>com.tibco.plugins</groupId>
-        <artifactId>bw6-maven-plugin</artifactId>
-        <version>2.9.2</version>
-        <extensions>true</extensions>
-        <configuration>
-          <tibcoHome>${tibco.Home}</tibcoHome>
-          <bwHome>${bw.Home}</bwHome>
-          <deployToAdmin>${deployToAdmin}</deployToAdmin>
-          <agentHost>${agentHost}</agentHost>
-          <agentPort>${agentPort}</agentPort>
-          <agentAuth>${agentAuth}</agentAuth>
-          <agentUsername>${agentUsername}</agentUsername>
-          <agentPassword>${agentPassword}</agentPassword>
-          <agentSSL>${agentSSL}</agentSSL>
-          <truststorePath>${truststorePath}</truststorePath>
-          <truststorePassword>${truststorePassword}</truststorePassword>
-          <keystorePath>${keystorePath}</keystorePath>
-          <keystorePassword>${keystorePassword}</keystorePassword>
-          <domain>${domain}</domain>
-          <domainDesc>${domainDesc}</domainDesc>
-          <appSpace>${appSpace}</appSpace>
-          <appSpaceDesc>${appSpaceDesc}</appSpaceDesc>
-          <appNode>${appNode}</appNode>
-          <appNodeDesc>${appNodeDesc}</appNodeDesc>
-          <osgiPort>${osgiPort}</osgiPort>
-          <httpPort>${httpPort}</httpPort>
-          <redeploy>${redeploy}</redeploy>
-          <backup>${backup}</backup>
-          <backupLocation>${backupLocation}</backupLocation>
-          <profile>${profile}</profile>
-          <externalProfile>${externalProfile}</externalProfile>
-          <externalProfileLoc>${externalProfileLoc}</externalProfileLoc>
-          <appNodeConfig>
-            <bw.rest.docApi.port>${appNodeConfig_bw.rest.docApi.port_value}</bw.rest.docApi.port>
-          </appNodeConfig>
-          <restartAppNode>${restartAppNode}</restartAppNode>
-          <earUploadPath>${earUploadPath}</earUploadPath>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+  <plugins>
+    <plugin>
+      <groupId>com.tibco.plugins</groupId>
+      <artifactId>bw6-maven-plugin</artifactId>
+      <version>2.9.2</version>
+      <extensions>true</extensions>
+      <configuration>
+        <tibcoHome>${tibco.home}</tibcoHome>
+        <bwHome>${bw.home}</bwHome>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
 
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>com.tibco.plugins</groupId>
-        <artifactId>bw6-maven-plugin</artifactId>
-        <version>2.9.2</version>
-      </plugin>
-    </plugins>
-  </reporting>
+<profiles>
+  <profile>
+    <id>ci</id>
+    <properties>
+      <tibco.home>E:/Tibco/bw/6.6</tibco.home>
+      <bw.home>E:/Tibco/bw/6.6</bw.home>
+    </properties>
+  </profile>
 
-  <!-- Profiles -->
-  <profiles>
-    <!-- Local developer machine -->
-    <profile>
-      <id>LOCAL</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
-      <properties>
-        <tibco.Home>C:\tibco\bw6</tibco.Home>
-        <bw.Home>\bw\6.8</bw.Home>
-      </properties>
-    </profile>
-
-    <!-- Jenkins / Server -->
-    <profile>
-      <id>SERVER</id>
-      <properties>
-        <tibco.Home>E:\Tibco</tibco.Home>
-        <bw.Home>\bw\6.6</bw.Home>
-      </properties>
-    </profile>
-  </profiles>
+  <profile>
+    <id>dev</id>
+    <properties>
+      <tibco.home>E:/Tibco/bw/6.8</tibco.home>
+      <bw.home>E:/Tibco/bw/6.8</bw.home>
+    </properties>
+  </profile>
+</profiles>
 
 </project>
