@@ -33,7 +33,7 @@
     <project.type>AppSpace</project.type>
     <domainDesc></domainDesc>
     <keystorePassword></keystorePassword>
-    <bw.Home>\bw\6.8</bw.Home>
+    <bw.Home>\bw\6.6</bw.Home>
     <httpPort>8050</httpPort>
     <profile>default.substvar</profile>
     <restartAppNode>false</restartAppNode>
@@ -43,7 +43,7 @@
     <keystorePath></keystorePath>
     <domain>CI_Test-Domain</domain>
     <agentPort>8079</agentPort>
-    <tibco.Home>E:\Tibco\bw\6.6</tibco.Home>
+    <tibco.Home>E:\Tibco\bw</tibco.Home>
   </properties>
   <build>
     <plugins>
