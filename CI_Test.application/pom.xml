@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -15,7 +15,7 @@
   <artifactId>CI_Test.application</artifactId>
   <packaging>bwear</packaging>
 
-  <!-- Default properties (used if no profile is selected) -->
+  <!-- Default properties -->
   <properties>
     <backup>false</backup>
     <externalProfile>false</externalProfile>
@@ -48,10 +48,6 @@
     <keystorePath></keystorePath>
     <domain>CI_Test-Domain</domain>
     <agentPort>8079</agentPort>
-
-    <!-- Default Tibco paths (LOCAL) -->
-    <tibco.Home>C:\tibco\bw6</tibco.Home>
-    <bw.Home>\bw\6.8</bw.Home>
   </properties>
 
   <build>
@@ -109,9 +105,9 @@
     </plugins>
   </reporting>
 
-  <!-- Profiles for different environments -->
+  <!-- Profiles -->
   <profiles>
-    <!-- Local profile -->
+    <!-- Local developer machine -->
     <profile>
       <id>LOCAL</id>
       <activation>
@@ -123,13 +119,14 @@
       </properties>
     </profile>
 
-    <!-- Server profile -->
+    <!-- Jenkins / Server -->
     <profile>
       <id>SERVER</id>
       <properties>
-        <tibco.Home>E:\Tibco\bw\6.6</tibco.Home>
+        <tibco.Home>E:\Tibco</tibco.Home>
         <bw.Home>\bw\6.6</bw.Home>
       </properties>
     </profile>
   </profiles>
+
 </project>
