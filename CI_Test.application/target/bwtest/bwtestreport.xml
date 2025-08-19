@@ -11,20 +11,20 @@
             <packageName>ci_test</packageName>
             <processName>ci_test.SubProcess</processName>
             <testCaseResult xsi:type="testCaseResultDTO">
-                <assertionFailure>1</assertionFailure>
+                <assertionFailure>0</assertionFailure>
                 <assertionResult xsi:type="assertionResultDTO">
                     <activityName>End</activityName>
-                    <activityOutput>&lt;tns:result&gt;15&lt;/tns:result&gt;</activityOutput>
+                    <activityOutput></activityOutput>
                     <assertionMode>Primitive</assertionMode>
-                    <assertionStatus>failed</assertionStatus>
+                    <assertionStatus>passed</assertionStatus>
                     <endElementNameTag>&lt;/tns:result&gt;</endElementNameTag>
                     <goldInput>&lt;tns:result&gt;15&lt;/tns:result&gt;</goldInput>
                     <instanceId>bw0a100</instanceId>
-                    <message>BX-200006: Assertion error @End</message>
+                    <message></message>
                     <startElementNameTag>&lt;tns:result&gt;</startElementNameTag>
                 </assertionResult>
                 <assertions>1</assertions>
-                <assertionsRun>0</assertionsRun>
+                <assertionsRun>1</assertionsRun>
                 <processFailures>0</processFailures>
                 <testCaseFile>/CI_Test/Tests/CI_Test1.bwt</testCaseFile>
             </testCaseResult>
