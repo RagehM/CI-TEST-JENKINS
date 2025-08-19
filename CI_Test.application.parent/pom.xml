@@ -21,6 +21,17 @@
         <artifactId>maven-site-plugin</artifactId>
         <version>3.7.1</version>
       </plugin>
+
+      <!-- Add the BW6 Maven Plugin here -->
+      <plugin>
+        <groupId>com.tibco.plugins</groupId>
+        <artifactId>bw6-maven-plugin</artifactId>
+        <version>2.9.2</version>
+        <configuration>
+          <!-- Set your BW installation path -->
+          <tibcoHome>E:/Tibco/bw/6.6</tibcoHome>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
