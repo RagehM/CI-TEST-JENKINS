@@ -33,7 +33,7 @@
     <project.type>AppSpace</project.type>
     <domainDesc></domainDesc>
     <keystorePassword></keystorePassword>
-    <bw.Home>\bw\6.6</bw.Home>
+    <bw.Home>\bw\6.8</bw.Home>
     <httpPort>8050</httpPort>
     <profile>default.substvar</profile>
     <restartAppNode>false</restartAppNode>
@@ -43,12 +43,12 @@
     <keystorePath></keystorePath>
     <domain>CI_Test-Domain</domain>
     <agentPort>8079</agentPort>
-    <tibco.Home>E:\Tibco</tibco.Home>
+    <tibco.Home>C:\TIBCO_6.8\bw6</tibco.Home>
   </properties>
   <build>
     <plugins>
       <plugin>
-        <groupId>com.tibco.bw</groupId>
+        <groupId>com.tibco.plugins</groupId>
         <artifactId>bw6-maven-plugin</artifactId>
         <version>2.9.2</version>
         <extensions>true</extensions>

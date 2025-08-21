@@ -1,0 +1,2 @@
+Tests for ci_test.SubProcess
+Tests run : 1    Success : 1 	Failure : 0	Errors : 0

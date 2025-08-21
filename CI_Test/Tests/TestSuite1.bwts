@@ -1,0 +1,6 @@
+---
+appName: "CI_Test"
+testsuite:
+- name: "TestSuite1.bwts"
+testCases:
+- "CI_Test1.bwt"
