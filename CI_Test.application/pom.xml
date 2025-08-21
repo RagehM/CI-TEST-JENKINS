@@ -43,7 +43,7 @@
     <keystorePath></keystorePath>
     <domain>CI_Test-Domain</domain>
     <agentPort>8079</agentPort>
-    <tibco.Home>C:\TIBCO_6.8\bw6</tibco.Home>
+    <tibco.Home>E:\TIBCO_6.8\bw6</tibco.Home>
   </properties>
   <build>
     <plugins>
